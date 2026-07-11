@@ -53,7 +53,7 @@ export default function Analyze() {
       </header>
       {/* Hero */}
 
-    <section className="mx-auto max-w-6xl px-8 pt-6">
+    <section className="mx-auto flex max-w-6xl flex-col items-center px-8 pt-6">
 
         <div className="mb-6 text-center">
 
