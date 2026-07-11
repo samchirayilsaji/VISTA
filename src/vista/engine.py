@@ -11,6 +11,8 @@ from vista.classifier import VariantClassifier
 from vista.report import ReportGenerator
 from vista.clinvar import ClinVarClient
 from vista.pubmed import PubMedClient
+from vista.services.ensembl import EnsemblService
+from vista.phenotypes import PhenotypeExtractor
 
 
 class VistaEngine:
@@ -23,6 +25,8 @@ class VistaEngine:
         self.acmg = ACMGEngine()
         self.classifier = VariantClassifier()
         self.report = ReportGenerator()
+        self.ensembl = EnsemblService()
+        self.phenotypes = PhenotypeExtractor()
 
     def analyze(
         self,
@@ -51,10 +55,12 @@ class VistaEngine:
         
         variant = self.pubmed.annotate(variant)
         
+        variant = self.phenotypes.annotate(variant)
+        
         variant = self.acmg.classify(variant)
 
         variant = self.classifier.classify(variant)
-
+        
+        print(variant.gnomad)
         report = self.report.generate(variant)
-
         return report

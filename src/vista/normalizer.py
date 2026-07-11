@@ -1,5 +1,5 @@
 from vista.variant import Variant
-from vista.services.ensebl import EnsemblService
+from vista.services.ensembl import EnsemblService
 
 
 class VariantNormalizer:
@@ -33,11 +33,11 @@ class VariantNormalizer:
         )
 
         colocated = record.get("colocated_variants", [])
-        print(colocated)
+        for i, c in enumerate(colocated):
+            print(f"\nVariant {i}")
+            print("ID:", c.get("id"))
+            print("Alleles:", c.get("alleles"))
+            print("Has frequencies:", "frequencies" in c)
 
-        if colocated:
-            variant.rsid = colocated[0].get("id")
-            frequencies = colocated[0].get("frequencies", {})
-            variant.gnomad = frequencies.get(variant.alt, {})
-
+        colocated = record.get("colocated_variants", [])
         return variant

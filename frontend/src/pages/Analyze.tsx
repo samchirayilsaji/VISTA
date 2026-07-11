@@ -11,9 +11,7 @@ export default function Analyze() {
   async function handleAnalyze(form: any) {
     try {
       setScreen("loading");
-
       const response = await api.post("/analyze", form);
-
       setResult(response.data);
 
       setTimeout(() => {
@@ -35,9 +33,17 @@ export default function Analyze() {
       <header className="border-b border-zinc-800">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-10">
 
-          <h1 className="text-2xl font-black tracking-tight">
-            VISTA
-          </h1>
+          <div className="flex items-center gap-3">
+            <img
+              src="/logo.png"
+              alt="VISTA Logo"
+              className="h-10 w-10 object-contain"
+            />
+
+            <h1 className="text-2xl font-black tracking-tight">
+              VISTA
+            </h1>
+          </div>
 
           <span className="rounded-full border border-zinc-700 px-3 py-1.5 text-sm text-zinc-400">
             Clinical AI
@@ -45,7 +51,6 @@ export default function Analyze() {
 
         </div>
       </header>
-
       {/* Hero */}
 
     <section className="mx-auto max-w-6xl px-8 pt-6">

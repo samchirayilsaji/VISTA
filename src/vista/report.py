@@ -49,6 +49,7 @@ class ReportGenerator:
                     "count": len(variant.pubmed),
                     "papers": variant.pubmed,
                 },
+                "phenotypes": variant.phenotypes,
             },
 
             "acmg": variant.acmg,

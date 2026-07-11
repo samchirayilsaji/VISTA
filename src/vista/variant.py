@@ -55,6 +55,8 @@ class Variant:
     predictions: Dict = field(default_factory=dict)
 
     pubmed: List = field(default_factory=list)
+    
+    phenotypes: List = field(default_factory=list)
 
     acmg: Dict = field(default_factory=dict)
 

@@ -15,11 +15,11 @@ type VariantFormProps = {
 
 export default function VariantForm({ onAnalyze }: VariantFormProps) {
   const [form, setForm] = useState({
-    gene: "PLIN4",
-    transcript: "NM_001289127.2",
-    hgvs: "c.3702+5G>A",
-    phenotype: "Distal Myopathy",
-    inheritance: "Autosomal Dominant",
+    gene: "LDLR",
+    transcript: "NM_000527.5",
+    hgvs: "c.1055G>T",
+    phenotype: "hypercholesterolemia",
+    inheritance: "Autosomal recessive",
     zygosity: "Heterozygous",
   });
 

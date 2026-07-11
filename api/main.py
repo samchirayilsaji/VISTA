@@ -30,9 +30,9 @@ engine = VistaEngine()
 
 @app.get("/")
 def home():
-
     return {
-        "message": "Welcome to the VISTA API!"
+        "message": "Welcome to the VISTA API!",
+        "version": "LOCAL DEBUG 123"
     }
 
 @app.post("/analyze")
