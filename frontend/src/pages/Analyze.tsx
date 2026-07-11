@@ -67,7 +67,7 @@ export default function Analyze() {
             Clinical Variant Analysis
           </h2>
 
-          <p className="mx-auto mt-4 max-w-3xl text-center text-base leading-7 text-zinc-400">
+          <p className="mt-4 w-full max-w-3xl mx-auto text-center text-base leading-7 text-zinc-400">
             Search ClinVar, PubMed, population databases and ACMG evidence
             automatically to generate a comprehensive interpretation report.
           </p>
